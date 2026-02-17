@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Yazıları"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Tarih", name: "date", widget: "datetime" }
+      - { label: "Kapak Görseli", name: "thumbnail", widget: "image", required: false }
+      - { label: "İçerik", name: "body", widget: "markdown" }
+
+  - name: "egitimler"
+    label: "Eğitimler"
+    folder: "content/egitimler"
+    create: true
+    fields:
+      - { label: "Eğitim Adı", name: "title", widget: "string" }
+      - { label: "Kategori", name: "category", widget: "select", options: ["Animasyon", "Dijital Tasarım", "Konsept Tasarım", "Portfolyo", "Çizim"] }
+      - { label: "Görsel", name: "image", widget: "image" }
+      - { label: "Açıklama", name: "description", widget: "text" }
+
+  - name: "workshoplar"
+    label: "Workshoplar"
+    folder: "content/workshoplar"
+    create: true
+    fields:
+      - { label: "Workshop Adı", name: "title", widget: "string" }
+      - { label: "Tarih", name: "date", widget: "datetime" }
+      - { label: "Süre", name: "duration", widget: "string" }
+      - { label: "Görsel", name: "image", widget: "image" }
