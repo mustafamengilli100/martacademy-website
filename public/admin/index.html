@@ -1,15 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-<body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script>
-    CMS.init();
-  </script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Content Manager</title>
+
+    <!-- Netlify Identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- ÖNEMLİ: Decap'in otomatik başlatmasını kapatıyoruz -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+  </head>
+
+  <body>
+    <script src="https://unpkg.com/decap-cms@3.1.2/dist/decap-cms.js"></script>
+    <script>
+      window.CMS.init({ config: "/admin/config.yml" });
+    </script>
+  </body>
 </html>
